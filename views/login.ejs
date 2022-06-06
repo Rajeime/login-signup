@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/head') %>
+<body>
+
+        <div class="container con">
+            <form action="/login/authentication" method="post" class="form">
+
+                <div class="heading-div">
+                    <span class="heading">Sign In</span>
+                  </div>
+                
+                    <div class="input-field">
+                        <input type="text" name="email" id="" class="input" required>
+                        <label for="email">Email</label>
+                    </div>
+        
+                    <div class="input-field">
+                        <input type="password" name="password" id="" data-login-password class="input" required >
+                        <label for="password">Password</label>
+                        <i class="fa fa-eye eye" aria-hidden="true" data-see-password></i>
+                        <!-- <i class="fa fa-eye-slash" aria-hidden="true" data-see-password></i> -->
+                        
+                        
+                  <span class="error"> <% if (messages.error) { %>
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i><%- messages.error %>
+                    <% } %></span>
+
+                    </div>
+                
+                <div class="signIn-sec">
+                    <div class="use-current"><a href="./">Create account</a></div>
+                    <button type="submit">Sign In</button>
+                  </div>                  
+            </form>
+        </div>
+</body>
+<script src="loginScript.js"></script>
+</html>

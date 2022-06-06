@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/head') %>
+<body>
+        <div class="container">
+            <form action="/signUp" method="POST">
+
+                <div class="heading-div">
+                    <span class="heading">Create your Account</span>
+                  </div>
+
+                <div class="top">
+                    <div class="input-field">
+                        <input type="text" name="firstName" class="input" required>
+                        <label for="firstName">First Name</label>
+                    </div>
+        
+                    <div class="input-field">
+                        <input type="text" name="lastName" class="input" required>
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+                
+                <div class="input-field">
+                    <input type="text" name="email" id="" class="input" required>
+                    <label for="email">Email</label>
+                    <span class="error"> <% if (messages.emailError) { %>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i><%- messages.emailError %>
+                        <% } %></span>
+                </div>
+    
+                <div class="input-field">
+                    <input type="password" name="password" id="" class="input" required data-password>
+                    <label for="password">Password</label>
+                </div>
+    
+                <div class="input-field">
+                    <input type="password" name="confirmPassword" id="" class="input" required data-password>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <span class="error"> <% if (messages.notMatch) { %>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i><%- messages.notMatch %>
+                        <% } %></span>
+                   
+                </div>
+
+                <div style="position: relative; margin-top: 10px;"> 
+                    <div class="checkbox-input" >
+                    <div class="checkbox-div"><input type="checkbox" name="" id="" class="checkbox" data-checkbox> </div>
+                    <span class="chk-span" style="margin-left: 10px;">Show Password</span> 
+                  </div> 
+    
+                <div class="signIn-sec">
+                    <div class="use-current"><a href="./login">Sign in instead</a></div>
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+
+            <% if (messages.success) { %> <div class="success">
+                <p> <%- messages.success %> </p></div>
+                <% } %>
+<!-- 
+        <div class="success">
+            <p> successfully registered!! </p>
+            
+        </div> -->
+        </div>
+        
+</body>
+
+<script src="script.js"></script>
+</html>
