@@ -2,8 +2,26 @@
 <html lang="en">
 <%-include('./partials/head') %>
 <body>
-       <h1>Welcome <%=name %></h1>
+       <div class="sidebar">
+              <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+              <a href="#tasks"><i class="fas fa-tasks"></i> Tasks</a>
+              <a href="#settings"><i class="fa fa-fw fa-wrench"></i> Settings</a>
+              <a href="#messages"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+              
+            </div>
 
-       <button><a href="/auth/logout">Log out</a></button>
+       <div class="main">
+
+              <div class="main-head">
+                     <h2><%=first_name %></h2>
+                     <button class="logout"><a href="/auth/logout">Log Out</a></button>
+              </div>
+
+              <div class="main-section">
+                     <!-- <p>Your email is <%=email%></p> -->
+              </div>
+           
+              <!-- <p><%=email %></p> -->
+       </div>
 </body>
 </html>

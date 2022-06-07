@@ -8,18 +8,20 @@ router.get('/login',(req,res)=>{
 })
 
 //login post request
-router.post('/login/authentication',(req,res)=>{
+router.post('/login/authentication', (req,res)=>{
     var email = req.body.email;
     var password = req.body.password;
         lib.query('SELECT * FROM users WHERE email = ?', [email], async(err, rows, fields)=> {
             if(err) throw err
             
+           
             const comparison = await bcrypt.compare(password, rows[0].password)
             const name = rows[0].first_name
 
-            if(comparison){
+            if(comparison && rows.length > 0){
                 req.session.loggedin = true;
                 req.session.name = name;
+                req.session.email = email
                 res.redirect('/auth/welcome')
             }
 

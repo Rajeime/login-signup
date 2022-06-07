@@ -2,6 +2,8 @@
 <html lang="en">
 <%-include('./partials/head') %>
 <body>
+    <div class="outer-container">
+
         <div class="container">
             <form action="/signUp" method="POST">
 
@@ -58,12 +60,11 @@
             <% if (messages.success) { %> <div class="success">
                 <p> <%- messages.success %> </p></div>
                 <% } %>
-<!-- 
-        <div class="success">
-            <p> successfully registered!! </p>
-            
-        </div> -->
+
         </div>
+        
+
+    </div>
         
 </body>
 
