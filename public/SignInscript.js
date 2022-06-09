@@ -1,7 +1,7 @@
-let checkbox = document.querySelector('[data-checkbox]');
-let password = document.querySelectorAll('[data-password]');
+var checkbox = document.querySelector('[data-checkbox]');
+var password = document.querySelectorAll('[data-password]');
 
-checkbox.addEventListener('change', checkFunction)
+checkbox.addEventListener('change', checkFunction);
 
 function checkFunction(e){
     let status = e.target.checked;
@@ -15,4 +15,8 @@ function checkFunction(e){
         }
     })
 }
+
+
+
+
 

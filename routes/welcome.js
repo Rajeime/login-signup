@@ -11,7 +11,7 @@ router.get('/welcome', (req, res, next)=> {
         
             if (req.session.loggedin) { 
                 res.render('welcome', {
-                  result: results,
+                //   result: results,
                   first_name: results[0].first_name,
                   last_name: results[0].last_name,
                   email: results[0].email

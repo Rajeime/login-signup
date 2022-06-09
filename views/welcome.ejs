@@ -3,25 +3,32 @@
 <%-include('./partials/head') %>
 <body>
        <div class="sidebar">
-              <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
-              <a href="#tasks"><i class="fas fa-tasks"></i> Tasks</a>
-              <a href="#settings"><i class="fa fa-fw fa-wrench"></i> Settings</a>
-              <a href="#messages"><i class="fa fa-fw fa-envelope"></i> Messages</a>
-              
+              <a href="#home" data-option class="home active"><i class="fa fa-fw fa-home"></i> Home</a>
+              <a href="#tasks" data-option class="task"><i class="fas fa-tasks"></i> Tasks</a>
+              <a href="#settings" data-option class="setting"><i class="fa fa-fw fa-wrench"></i> Settings</a>
+              <a href="#messages" data-option class="message"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+              <a href="#nutrient" data-option class="nutrient"><i class="fas fa-seedling"></i> Nutrition</a>
             </div>
 
        <div class="main">
 
               <div class="main-head">
-                     <h2><%=first_name %></h2>
+                     <h2><%=first_name %> <%=last_name %></h2>
                      <button class="logout"><a href="/auth/logout">Log Out</a></button>
               </div>
 
-              <div class="main-section">
-                     <!-- <p>Your email is <%=email%></p> -->
+              <div class="main-section" data-main-section>
+
+               <div class="home visible" data-option-select><%-include('./welcome/home') %></div> 
+                <div class="task" data-option-select><%-include('./welcome/task') %></div>
+                <div class="settings" data-option-select><%-include('./welcome/settings') %></div> 
+                <div class="message" data-option-select><%-include('./welcome/messages') %></div> 
+                <div class="nutrition" data-option-select><%-include('./welcome/nutrition') %></div> 
+         
+               
+
               </div>
-           
-              <!-- <p><%=email %></p> -->
        </div>
 </body>
+<script src="/welcome.js"></script>
 </html>

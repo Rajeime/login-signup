@@ -13,9 +13,7 @@ router.post('/login/authentication', (req,res)=>{
     var password = req.body.password;
         lib.query('SELECT * FROM users WHERE email = ?', [email], async(err, rows, fields)=> {
             if(err) throw err
-            
-           
-            const comparison = await bcrypt.compare(password, rows[0].password)
+            const comparison =  await bcrypt.compare(password, rows[0].password)
             const name = rows[0].first_name
 
             if(comparison && rows.length > 0){

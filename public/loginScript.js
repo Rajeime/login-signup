@@ -1,7 +1,7 @@
 // login page
-let loginPasswordIcon = document.querySelector('[data-see-password]');
-let loginInput = document.querySelector('[data-login-password]');
-let value = false
+var loginPasswordIcon = document.querySelector('[data-see-password]');
+var loginInput = document.querySelector('[data-login-password]');
+var value = false;
 
 loginPasswordIcon.addEventListener('click',(e)=>{
    value = !value
